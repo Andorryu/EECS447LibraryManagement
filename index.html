@@ -25,9 +25,21 @@
                 height: 75vh;
                 overflow:hidden;
             }
+            :root { /* root variable to be changed in js script */
+                --bg-var: rgb(94, 108, 122);
+            }
             nav a {
                 display: block;
-                text-decoration-style: none;
+                text-decoration: none;
+                color: white;
+                padding: 10px;
+            }
+            nav a:link {
+                background-color: var(--bg-var);
+            }
+            nav a:hover {
+                background-color: rgb(107, 124, 139);
+                color: rgb(235, 235, 235);
             }
             footer {
                 background-color: lightslategray;
@@ -47,22 +59,20 @@
         </header>
 
         <div style="overflow: auto;padding: 10px 0;">
-            <iframe src="">
-    
-            </iframe>
-            
+            <iframe src="addBook.html"></iframe>
             <nav>
-                <a href="#">Search</a>
-                <a href="#">Check Out</a>
-                <a href="#">Add Book</a>
-                <a href="#">Add Patron</a>
-                <a href="#">Remove Patron/Book</a>
-                <a href="#">Log Out</a>
+                <a id= "search" href="#">Search</a>
+                <a id= "checkOut" href="#">Check Out</a>
+                <a id= "addBook" href="#">Add Book</a>
+                <a id= "addPatron" href="#">Add Patron</a>
+                <a id= "removePatronBook" href="#">Remove Patron/Book</a>
+                <a id= "logOut" href="#">Log Out</a>
             </nav>
         </div>
 
         <footer>
             <p>Created by <span>Tristan Tjandra</span>, <span>Rylan DeGarmo</span>, and <span>Andrew Dority</span></p>
         </footer>
+        <script src="changePage.js"></script>
     </body>
 </html>
