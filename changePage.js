@@ -27,7 +27,10 @@ document.body.onload = function(){
 
     // get nav links
     links = document.body.querySelectorAll("a");
-    updateNavSelection();
+    updateNavSelection(); // initial update
+
+    // get iframe
+    iframe = document.body.querySelector("iframe");
 
     // set onclick event
     for (let link of links) {
@@ -35,6 +38,14 @@ document.body.onload = function(){
             // update nav and change iframe src
             currentPage = link.id;
             updateNavSelection();
+
+            // iframe
+            if (link.id != "logOut") {
+                iframe.setAttribute("src", link.id+".html"); // links will change iframe src to html files whose name matches the link id
+            }
+            else {
+                // do logout
+            }
         });
     }
 };
