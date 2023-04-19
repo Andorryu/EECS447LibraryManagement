@@ -27,6 +27,7 @@ document.body.onload = function(){
 
     // get nav links
     links = document.body.querySelectorAll("a");
+    updateNavSelection();
 
     // set onclick event
     for (let link of links) {
