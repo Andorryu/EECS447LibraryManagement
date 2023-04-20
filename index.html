@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <style>
             header {
                 background-color: lightslategray;
@@ -8,38 +9,6 @@
                 text-align: center;
                 color: white;
                 font-size: 1vw;
-            }
-            iframe {
-                float: left;
-                border-style: none;
-                width: 80%;
-                height: 75vh;
-                overflow: scroll;
-            }
-            nav {
-                background-color: lightslategray;
-                float: left;
-                width: 20%;
-                color: white;
-                text-align: center;
-                height: 75vh;
-                overflow:hidden;
-            }
-            :root { /* root variable to be changed in js script */
-                --bg-var: rgb(94, 108, 122);
-            }
-            nav a {
-                display: block;
-                text-decoration: none;
-                color: white;
-                padding: 10px;
-            }
-            nav a:link {
-                background-color: var(--bg-var);
-            }
-            nav a:hover {
-                background-color: rgb(107, 124, 139);
-                color: rgb(235, 235, 235);
             }
             footer {
                 background-color: lightslategray;
@@ -51,27 +20,35 @@
                 color: darkorange;
                 font-weight: bold;
             }
+            div {
+                padding: 20vh 38vw;
+            }
+            form {
+                color: white;
+                background-color: lightslategray;
+                text-align: center;
+            }
         </style>
     </head>
     <body>
         <header>
             <h1>LMS</h1>
         </header>
-
-        <div style="overflow: auto;padding: 10px 0;">
-            <iframe src="addBook.html"></iframe>
-            <nav>
-                <a id= "search" href="#search">Search</a>
-                <a id= "checkOut" href="#checkOut">Check Out</a>
-                <a id= "addBook" href="#addBook">Add Book</a>
-                <a id= "addPatron" href="#addPatron">Add Patron</a>
-                <a id= "logOut" href="#logOut">Log Out</a>
-            </nav>
+        <div>
+            <form action="logIn.php">
+                <br>
+                <h2>Log In</h2><br>
+                <label for="username">Username: </label>
+                <input type="text" id="username"><br><br><br>
+                <label for="password">Password: </label>
+                <input type="text" id="password"><br><br>
+                <input type="submit" value="Log In">
+                <p>Don't have an account? <a href="register.html">Register here!</a></p>
+                <br>
+            </form>
         </div>
-
         <footer>
             <p>Created by <span>Tristan Tjandra</span>, <span>Rylan DeGarmo</span>, and <span>Andrew Dority</span></p>
         </footer>
-        <script src="changePage.js"></script>
     </body>
 </html>
