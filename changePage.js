@@ -24,7 +24,7 @@ window.onload = function(){
         debug.appendChild(document.createTextNode(message));
     }
     // end setup debug
-    dlog("test");
+    
     // get nav links
     links = document.body.querySelectorAll("a");
     updateNavSelection(); // initial update
