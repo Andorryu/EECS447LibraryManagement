@@ -15,7 +15,7 @@ function updateNavSelection() {
 }
 
 // after body has loaded
-document.body.onload = function(){
+window.onload = function(){
     // setup debug
     debug = document.createElement("p");
     debug.style.color = "red";
@@ -24,7 +24,7 @@ document.body.onload = function(){
         debug.appendChild(document.createTextNode(message));
     }
     // end setup debug
-
+    dlog("test");
     // get nav links
     links = document.body.querySelectorAll("a");
     updateNavSelection(); // initial update
