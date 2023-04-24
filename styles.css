@@ -5,7 +5,7 @@ header {
     color: white;
     font-size: 1vw;
 }
-iframe {
+iframe#form {
     float: left;
     border-style: none;
     width: 80%;
