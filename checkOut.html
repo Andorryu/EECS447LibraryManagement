@@ -13,31 +13,68 @@
 
     .container{
         text-align: center;
-        font-size: 1.5em;
+        background-color: lightblue;
+    }
+
+    .patronOptions{
+        background-color: lightsalmon;
+    }
+    
+    .bookOptions{
+        background-color: lightgreen;
+    }
+
+    .patronOptions > input{
+    }
+
+    .bookOptions > input{
+        
+    }
+
+    form{
+        float: left;
+        width: 50%;
     }
     
 </style>
 <body>
     <h1>Check Out</h1>
     <div class="container">
-        <form>
-            <label style="margin-right: 75px;">Patron</label>
-            <label style="margin-inline: 125px;"></label>
-            <label>Book</label>
-            <label style="margin-left: 50px;"></label>
-
+        <form style="background-color: lightseagreen;"> <!-- Patron -->
             <br>
-            <br>
-
-            <input id="search_input1" type="text">
-            <button id="search_button1" style="margin-left:20px;">Search</button>
-
-            <label style="margin-inline: 50px;"></label>
-
-            <input id="search_input2" type="text">
-            <button id="search_button2" style="margin-left:20px;">Search</button>
+            <h2>Patron</h2><br><br>
+            <input type="text">
+            <input type="submit" value="Search"><br><br><br>
+            <div class="patronOptions">
+                <input type="radio" name="patronOption" value="firstName">
+                <label for="firstName">First Name</label>
+                <input type="radio" name="patronOption" value="lastName">
+                <label for="lastName">Last Name</label>
+                <input type="radio" name="patronOption" value="phone">
+                <label for="phone">Phone #</label>
+            </div>
         </form>
-        
+
+        <form style="background-color: lightskyblue;"> <!-- Book -->
+            <br>
+            <h2>Book</h2><br><br>
+            <input type="text">
+            <input type="submit" value="Search"><br><br><br>
+            <div class="bookOptions">
+                <input type="radio" name="bookOption" value="title">
+                <label for="title">Title</label>
+                <input type="radio" name="bookOption" value="author">
+                <label for="author">Author</label>
+                <input type="radio" name="bookOption" value="ISBN">
+                <label for="ISBN">ISBN</label>
+            </div>
+        </form>
+        <iframe>
+            
+        </iframe>
+        <iframe>
+            
+        </iframe>
     </div>
 </body>
 </html>

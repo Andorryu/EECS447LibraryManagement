@@ -1,6 +1,6 @@
 
 let links = [];
-let currentPage = "addBook" // default - should match the ids from the nav links in index
+let currentPage = "checkOut"; // should match the src in the iframe in base.html
 let debug = null;
 
 function updateNavSelection() {
@@ -45,6 +45,7 @@ window.onload = function(){
             }
             else {
                 // do logout
+                window.location.href = "logIn.html";
             }
         });
     }
