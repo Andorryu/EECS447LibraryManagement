@@ -6,7 +6,19 @@
     echo '<p style="text-align:center; font-size: 14px; color: rgb(164, 19, 36); font-weight: bold;">';
 
     if (empty($_POST['isbn'])) {
-        echo '</p>';
+        echo 'Please input an ISBN. </p>';
+        die();
+    }
+    elseif (empty($_POST['title'])) {
+        echo 'Please input a title. </p>';
+        die();
+    }
+    elseif (empty($_POST['author'])) {
+        echo 'Please input an author. </p>';
+        die();
+    }
+    elseif (empty($_POST['title'])) {
+        echo 'Please input genres. </p>';
         die();
     }
     elseif (strlen($_POST['isbn'] != 13)) {
