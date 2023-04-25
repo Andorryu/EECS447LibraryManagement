@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="styles.css">
         <style>
             div {
-                padding: 17vh 38vw;
+                padding: 10.5vh 38vw;
             }
             form {
                 color: white;
@@ -12,7 +12,8 @@
                 text-align: center;
             }
             iframe{
-                background-color: black;
+                border-style: none;
+                height: 60px;
             }
         </style>
     </head>
@@ -21,20 +22,30 @@
             <h1>LMS</h1>
         </header>
         <div>
-            <form action="signUp.php" method="post">
-                <br>
-                <h2>Sign Up</h2><br>
+            <form action="signUp.php" method="post" target="error" novalidate>
+                <br><h2>Sign Up</h2><br>
+
                 <label for="email">Email: </label>
-                <input type="email" id="email" name="email"><br><br><br>
+                <input type="email" name="email"><br><br><br>
+
                 <label for="password">Password: </label>
-                <input type="password" id="password" name="password"><br><br><br>
+                <input type="password" name="password"><br><br><br>
+
                 <label for="passwordConfirmation">Confirm Password: </label>
-                <input type="password" id="passwordConfirmation" name="passwordConfirmation"><br><br>
-                <input type="submit" value="Create Account">
+                <input type="password" name="passwordConfirmation"><br><br><br>
+
+                <label for="firstName">First Name: </label>
+                <input type="text" name="firstName"><br><br><br>
+
+                <label for="lastName">Last Name: </label>
+                <input type="text" name="lastName"><br><br>
+
+                <input id="submit" type="submit" value="Create Account">
                 <p>Already have an account? <a href="logIn.html">Log in here</a></p>
+
+                <iframe name="error" src="signUp.php"></iframe>
                 <br>
             </form>
-            <iframe src="signUp.php"></iframe>
         </div>
         <footer>
             <p>Created by <span>Tristan Tjandra</span>, <span>Rylan DeGarmo</span>, and <span>Andrew Dority</span></p>
