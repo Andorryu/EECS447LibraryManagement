@@ -43,10 +43,10 @@
         <form style="background-color: lightseagreen;"> <!-- Patron -->
             <br>
             <h2>Patron</h2><br><br>
-            <input type="text">
+            <input type="text" name="search">
             <input type="submit" value="Search"><br><br><br>
             <div class="patronOptions">
-                <input type="radio" name="Option" value="firstName">
+                <input type="radio" name="Option" value="firstName" checked>
                 <label for="firstName">First Name</label>
                 <input type="radio" name="Option" value="lastName">
                 <label for="lastName">Last Name</label>
@@ -55,13 +55,13 @@
             </div>
         </form>
 
-        <form action="searchBook.php" method="post" style="background-color: lightskyblue;"> <!-- Book -->
+        <form action="searchBook.php" method="post" style="background-color: lightskyblue;" target="bookResults"> <!-- Book -->
             <br>
             <h2>Book</h2><br><br>
-            <input type="text">
+            <input type="text" name="search">
             <input type="submit" value="Search"><br><br><br>
             <div class="bookOptions">
-                <input type="radio" name="Option" value="title">
+                <input type="radio" name="Option" value="title" checkeds>
                 <label for="title">Title</label>
                 <input type="radio" name="Option" value="author">
                 <label for="author">Author</label>
@@ -69,12 +69,8 @@
                 <label for="ISBN">ISBN</label>
             </div>
         </form>
-        <iframe>
-            
-        </iframe>
-        <iframe>
-            
-        </iframe>
+        <iframe></iframe>
+        <iframe name="bookResults" src="searchBook.php"></iframe>
     </div>
 </body>
 </html>
