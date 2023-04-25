@@ -6,7 +6,23 @@
     echo '<p style="text-align:center; font-size: 14px; color: rgb(164, 19, 36); font-weight: bold;">';
 
     if (empty($_POST['PID'])) {
-        echo '</p>';
+        echo 'Please input a PID. </p>';
+        die();
+    }
+    elseif (empty($_POST['email'])) {
+        echo 'Please input an email. </p>';
+        die();
+    }
+    elseif (empty($_POST['phone'])) {
+        echo 'Please input a phone number. </p>';
+        die();
+    }
+    elseif (empty($_POST['firstName'])) {
+        echo 'Please input a first name. </p>';
+        die();
+    }
+    elseif (empty($_POST['lastName'])) {
+        echo 'Please input a last name. </p>';
         die();
     }
     elseif (strlen($_POST['phone'] != 10)) {
@@ -47,7 +63,7 @@
     }
 
     $firstName = $_POST['firstName'];
-    $firstName = $_POST['author'];
+    $lastName = $_POST['lastName'];
 
     $query = "insert into Patron(PID, email, phone, firstName, lastName) values ($PID, $email, $phone, $firstName, $lastName);" or die("Failed to insert patron.");
     mysqli_query($conn, $query);

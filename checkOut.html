@@ -24,11 +24,8 @@
         background-color: lightgreen;
     }
 
-    .patronOptions > input{
-    }
-
-    .bookOptions > input{
-        
+    iframe{
+        width: 49%;
     }
 
     form{
@@ -40,41 +37,39 @@
 <body>
     <h1>Check Out</h1>
     <div class="container">
-        <form style="background-color: lightseagreen;"> <!-- Patron -->
+        <form style="background-color: lightseagreen;" action="checkOutPatron.php" method="post" target="patronResults"> <!-- Patron -->
             <br>
             <h2>Patron</h2><br><br>
-            <input type="text">
+            <input type="text" name="search">
             <input type="submit" value="Search"><br><br><br>
             <div class="patronOptions">
-                <input type="radio" name="patronOption" value="firstName">
+                <input type="radio" name="option" value="firstName">
                 <label for="firstName">First Name</label>
-                <input type="radio" name="patronOption" value="lastName">
+                <input type="radio" name="option" value="lastName">
                 <label for="lastName">Last Name</label>
-                <input type="radio" name="patronOption" value="phone">
+                <input type="radio" name="option" value="phone">
                 <label for="phone">Phone #</label>
+                <input type="radio" name="option" value="PID">
+                <label for="PID">PID</label>
             </div>
         </form>
 
-        <form style="background-color: lightskyblue;"> <!-- Book -->
+        <form style="background-color: lightskyblue;" action="checkOutBook.php" method="post" target="bookResults"> <!-- Book -->
             <br>
             <h2>Book</h2><br><br>
-            <input type="text">
+            <input type="text" name="search">
             <input type="submit" value="Search"><br><br><br>
             <div class="bookOptions">
-                <input type="radio" name="bookOption" value="title">
+                <input type="radio" name="option" value="title">
                 <label for="title">Title</label>
-                <input type="radio" name="bookOption" value="author">
+                <input type="radio" name="option" value="author">
                 <label for="author">Author</label>
-                <input type="radio" name="bookOption" value="ISBN">
+                <input type="radio" name="option" value="ISBN">
                 <label for="ISBN">ISBN</label>
             </div>
         </form>
-        <iframe>
-            
-        </iframe>
-        <iframe>
-            
-        </iframe>
+        <iframe name="patronResults" src="checkOutPatron.php"></iframe>
+        <iframe name="bookResults" src="checkOutBook.php"></iframe>
     </div>
 </body>
 </html>
