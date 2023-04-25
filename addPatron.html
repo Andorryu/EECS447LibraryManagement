@@ -20,7 +20,7 @@
 <body>
     <h1>Add Patron</h1>
     <div class="container">
-        <form>
+        <form action="addBook.php" method="post" target="confirmDeny" novalidate>
             <label for="fname">First name: </label>
             <input id="fname" type="text">
             <br>
@@ -42,6 +42,9 @@
             <br>
             <br>
             <input id="submitbutton" type="submit" value="Add Patron">
+            <br>
+            <br>
+            <label id="confirmDeny" name="confirmDeny"> </label>
         </form>
         
     </div>
