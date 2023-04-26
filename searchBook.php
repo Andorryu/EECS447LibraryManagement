@@ -8,8 +8,8 @@
         echo 'No results.</p>';
         die();
     }
-    
-    $conn = mysqli_connect('mysql.eecs.ku.edu', 't365t737', 'aiPho4UN', 't365t737');
+
+    $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
     $input = $_POST['search'];
     $table = $_POST['Option'];
     $query = "select * from Book where $table = '$input'";
