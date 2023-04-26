@@ -2,6 +2,8 @@
 let links = [];
 let debug = null;
 
+currentPage = 'search';
+
 function updateNavSelection() {
     for (let link of links) {
         if (link.id == currentPage) {
