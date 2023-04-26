@@ -23,7 +23,7 @@
     $query = "select * from Patron where $option like '%$search%'";
     $q_result = mysqli_query($conn, $query);
 
-    echo '<script type="text/javascript" src="selection.js"></script>';
+    echo '<script type="text/javascript" src="../selection.js"></script>';
     echo '<style>
 
     tr, th, td{border-style: solid;}

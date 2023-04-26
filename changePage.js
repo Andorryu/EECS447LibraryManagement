@@ -1,6 +1,5 @@
 
 let links = [];
-let currentPage = "search"; // should match the src in the iframe in base.html
 let debug = null;
 
 function updateNavSelection() {
@@ -31,6 +30,7 @@ window.onload = function(){
 
     // get iframe
     iframe = document.body.querySelector("iframe");
+    currentPage = iframe.src.replace('.html', '');
 
     // set onclick event
     for (let link of links) {
