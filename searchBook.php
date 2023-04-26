@@ -11,7 +11,7 @@
 
     $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
     $input = $_POST['search'];
-    $table = $_POST['Option'];
+    $table = $_POST['option'];
     $query = "select * from Book where $table = '$input'";
     $q_result = mysqli_query($conn, $query);
     echo '<table>';
