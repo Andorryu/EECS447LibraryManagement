@@ -1,4 +1,5 @@
 <?php
+    include 'creds.php';
     echo '<p style="text-align: center; color: red;">';
 
     if (empty($_POST['patron']) or empty($_POST['book'])) {
@@ -9,7 +10,7 @@
     $patron = $_POST['patron'];
     $book = $_POST['book'];
     $date = strtotime("+1 Week");
-    $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
+    $conn = mysqli_connect($server_, $username_, $password_, $database_);
 
     $query = "select ISBN, PID from CheckOut where ISBN = $book;";
     $result = mysqli_fetch_array(mysqli_query($conn, $query));

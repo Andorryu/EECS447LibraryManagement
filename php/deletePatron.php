@@ -1,7 +1,8 @@
 <?php
+    include 'creds.php';
 
 // Connect to the database
-$conn = mysqli_connect("localhost", "root", "password", "LMS");
+    $conn = mysqli_connect($server_, $username_, $password_, $database_);
 
 // Retrieve the ID parameter from the form submission
 $id = $_POST['PID'];

@@ -1,4 +1,5 @@
 <?php
+    include 'creds.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -19,7 +20,7 @@
 
     $search = $_POST['search'];
     $option = $_POST['option'];
-    $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
+    $conn = mysqli_connect($server_, $username_, $password_, $database_);
     $query = "select * from Patron where $option like '%$search%'";
     $q_result = mysqli_query($conn, $query);
 

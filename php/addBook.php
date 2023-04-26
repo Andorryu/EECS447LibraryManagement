@@ -1,4 +1,5 @@
 <?php
+    include 'creds.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -27,7 +28,7 @@
         die();
     }
 
-    $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
+    $conn = mysqli_connect($server_, $username_, $password_, $database_);
 
     //check for book already in database
     $isbn = $_POST['ISBN'];

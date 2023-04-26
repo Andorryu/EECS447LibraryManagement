@@ -1,8 +1,9 @@
 <?php
+    include 'creds.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
-    $conn = mysqli_connect("localhost", "root", "password", "LMS");
+    $conn = mysqli_connect($server_, $username_, $password_, $database_);
     // JOIN QUERY 2
     $q_result = mysqli_query($conn, "select Book.ISBN, title, author, group_concat(genre separator '\n') as genre from Book, Genre 
         where Book.ISBN not in (select CheckOut.ISBN from Book, CheckOut where CheckOut.ISBN = Book.ISBN) 

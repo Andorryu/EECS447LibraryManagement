@@ -1,4 +1,5 @@
 <?php
+    include 'creds.php';
     ini_set('display_errors', 1);
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
@@ -11,7 +12,7 @@
         die();
     }
 
-    $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
+    $conn = mysqli_connect($server_, $username_, $password_, $database_);
     $input = $_POST['search'];
     $table = $_POST['option'];
     // JOIN QUERY 1
