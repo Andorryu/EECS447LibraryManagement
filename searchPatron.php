@@ -37,6 +37,7 @@
         '<td>' . $line['lastName'] . '</td>' .
         '<td>' . $line['firstName'] . '</td>' .
         '<td>' . $line['phone'] . '</td>' .
+        "<td><form action='deletePatron.php' method='post'><input type='hidden' name='PID' value='$line['PID']'><button type='submit'>Delete</button></form></td>" .
         '</tr>';
     }
     echo "</table>";
