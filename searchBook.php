@@ -14,7 +14,7 @@
     $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
     $input = $_POST['search'];
     $table = $_POST['option'];
-    $query = "select * from Book where $table = '$input'";
+    $query = "select * from Book where $table like '%$input%'";
     $q_result = mysqli_query($conn, $query);
     echo '<style> table, tr, th, td{ border-style: solid;}</style>';
     echo '<table>';
