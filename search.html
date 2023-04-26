@@ -24,6 +24,16 @@
         background-color: lightgreen;
     }
 
+    .selectedPatron{
+        background-color: blue;
+        padding: 50px 0;
+    }
+
+    .selectedBooks{
+        background-color: cadetblue;
+        padding: 50px 0;
+    }
+
     iframe{
         width: 49%;
     }
@@ -50,6 +60,9 @@
                 <input type="radio" name="option" value="phone">
                 <label for="phone">Phone #</label>
             </div>
+            <div class="selectedPatron">
+                test
+            </div>
         </form>
 
         <form action="searchBook.php" method="post" style="background-color: lightskyblue;" target="bookResults"> <!-- Book -->
@@ -64,6 +77,9 @@
                 <label for="author">Author</label>
                 <input type="radio" name="option" value="ISBN">
                 <label for="ISBN">ISBN</label>
+            </div>
+            <div class="selectedBooks">
+                test
             </div>
         </form>
         <iframe name="patronResults" src="searchPatron.php"></iframe>
