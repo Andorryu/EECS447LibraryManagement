@@ -24,14 +24,19 @@
         background-color: lightgreen;
     }
 
-    .selectedPatron{
+    .selectedPatronSection{
         background-color: blue;
-        padding: 50px 0;
+        padding: 20px 200px;
     }
 
-    .selectedBooks{
+    .selectedBooksSection{
         background-color: cadetblue;
-        padding: 50px 0;
+        padding: 20px 100px;
+    }
+
+    .selectedBooksSection > div, .selectedPatronSection > div{
+        background-color: white;
+        padding: 20px;
     }
 
     iframe{
@@ -60,8 +65,8 @@
                 <input type="radio" name="option" value="phone">
                 <label for="phone">Phone #</label>
             </div>
-            <div class="selectedPatron">
-                test
+            <div class="selectedPatronSection">
+                <div class="selectedPatron">No patron selected.</div>
             </div>
         </form>
 
@@ -78,8 +83,8 @@
                 <input type="radio" name="option" value="ISBN">
                 <label for="ISBN">ISBN</label>
             </div>
-            <div class="selectedBooks">
-                test
+            <div class="selectedBooksSection">
+                <div class="selectedBooks">No book(s) selected.</div>
             </div>
         </form>
         <iframe name="patronResults" src="searchPatron.php"></iframe>
