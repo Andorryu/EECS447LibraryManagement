@@ -21,7 +21,7 @@
 <body>
     <h1>Add Book</h1>
     <div class="container">
-        <form>
+        <form action="addBook.php" method="post" target="confirmDeny" novalidate>
             <label for="title">Title: </label>
             <input id="title" type="text">
             <br>
@@ -36,6 +36,12 @@
             <br>
             <label for="genres">Genres: </label>
             <input id="genres" type="text">
+            <br>
+            <br>
+            <input id="submitbutton" type="submit" value="Add Book">
+            <br>
+            <br>
+            <label id="confirmDeny" name="confirmDeny"> </label>
         </form>
         
     </div>
