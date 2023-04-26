@@ -24,35 +24,21 @@
         background-color: lightgreen;
     }
 
-    .selectedPatronSection{
-        background-color: blue;
-        padding: 20px 200px;
-    }
-
-    .selectedBooksSection{
-        background-color: cadetblue;
-        padding: 20px 100px;
-    }
-
-    .selectedBooksSection > div, .selectedPatronSection > div{
-        background-color: white;
-        padding: 20px;
-    }
-
     iframe{
         width: 49%;
     }
 
-    form{
+    form.search{
         float: left;
         width: 50%;
     }
     
 </style>
+<script src="selection.js"></script>
 <body>
-    <h1>Search</h1>
+    <h1>Search/Check Out</h1>
     <div class="container">
-        <form action="searchPatron.php" method="post" style="background-color: lightseagreen;" target="patronResults"> <!-- Patron -->
+        <form class="search" action="searchPatron.php" method="post" style="background-color: lightseagreen;" target="patronResults"> <!-- Patron -->
             <br>
             <h2>Patron</h2><br><br>
             <input type="text" name="search">
@@ -65,12 +51,9 @@
                 <input type="radio" name="option" value="phone">
                 <label for="phone">Phone #</label>
             </div>
-            <div class="selectedPatronSection">
-                <div class="selectedPatron">No patron selected.</div>
-            </div>
         </form>
 
-        <form action="searchBook.php" method="post" style="background-color: lightskyblue;" target="bookResults"> <!-- Book -->
+        <form class="search" action="searchBook.php" method="post" style="background-color: lightskyblue;" target="bookResults"> <!-- Book -->
             <br>
             <h2>Book</h2><br><br>
             <input type="text" name="search">
@@ -83,15 +66,18 @@
                 <input type="radio" name="option" value="ISBN">
                 <label for="ISBN">ISBN</label>
             </div>
-            <div class="selectedBooksSection">
-                <div class="selectedBooks">No book(s) selected.</div>
-            </div>
         </form>
         <iframe name="patronResults" src="searchPatron.php"></iframe>
         <iframe name="bookResults" src="searchBook.php"></iframe>
-        <form>
-            <input type="hidden"></input>
+
+    </div>
+    <div>
+        <form action="checkOut.php" target="message">
+            <input id="patronValue" type="hidden" name="patron">
+            <input id="bookValue" type="hidden" name="book">
+            <input type="submit" value="Check Out">
         </form>
+        <iframe name="message"></iframe>
     </div>
 </body>
 </html>
