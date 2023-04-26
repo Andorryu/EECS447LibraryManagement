@@ -3,7 +3,7 @@
     ini_set('display_startup_errors', 1);
     error_reporting(E_ALL);
     $conn = mysqli_connect("localhost", "root", "password", "LMS");
-    $q_result = mysqli_query($conn, "SELECT DISTINCT title, author, Book.ISBN FROM Book, CheckOut WHERE Book.ISBN <> CheckOut.ISBN");
+    $q_result = mysqli_query($conn, "select * from Book where ISBN not in (select CheckOut.ISBN from Book, CheckOut where CheckOut.ISBN = Book.ISBN);");
     echo '<style> table, tr, th, td{ border-style: solid;}</style>';
     echo '<table>';
     echo '<tr>
