@@ -16,34 +16,38 @@
         text-align: center;
         font-size: 1.5em;
     }
+
+    iframe{
+        border-style: none;
+        height: 50px;
+    }
     
 </style>
 <body>
     <h1>Add Book</h1>
     <div class="container">
-        <form action="addBook.php" method="post" target="confirmDeny" novalidate>
+        <form action="addBook.php" method="post" target="error" novalidate>
             <label for="title">Title: </label>
-            <input id="title" type="text">
+            <input name="title" type="text">
             <br>
             <br>
             <label for="author">Author: </label>
-            <input id="author" type="text">
+            <input name="author" type="text">
             <br>
             <br>
-            <label for="isbn">ISBN: </label>
-            <input id="isbn" type="text" maxlength="13">
+            <label for="ISBN">ISBN: </label>
+            <input name="ISBN" type="text" maxlength="13">
             <br>
             <br>
-            <label for="genres">Genres: </label>
-            <input id="genres" type="text">
+            <label for="genres">Genres: (Please enter BISAC codes in a comma separated list)</label><br>
+            <input name="genres" type="text">
             <br>
             <br>
-            <input id="submitbutton" type="submit" value="Add Book">
+            <input type="submit" value="Add Book">
             <br>
             <br>
-            <label id="confirmDeny" name="confirmDeny"> </label>
         </form>
-        
+        <iframe name="error", src="addBook.php"></iframe>
     </div>
 </body>
 </html>

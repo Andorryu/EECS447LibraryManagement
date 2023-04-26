@@ -5,35 +5,36 @@
 
     echo '<p style="text-align:center; font-size: 14px; color: rgb(164, 19, 36); font-weight: bold;">';
 
-    if (empty($_POST['isbn'])) {
-        echo 'Please input an ISBN. </p>';
+    // ISBN
+    if (empty($_POST['ISBN'])) {
+        echo '</p>';
         die();
     }
-    elseif (empty($_POST['title'])) {
-        echo 'Please input a title. </p>';
-        die();
-    }
-    elseif (empty($_POST['author'])) {
-        echo 'Please input an author. </p>';
-        die();
-    }
-    elseif (empty($_POST['title'])) {
-        echo 'Please input genres. </p>';
-        die();
-    }
-    elseif (strlen($_POST['isbn'] != 13)) {
+    elseif (strlen($_POST['ISBN']) != 13) {
         echo 'ISBN must be 13 numbers long. </p>';
+        die();
+    }
+
+    // title
+    if (empty($_POST['title'])) {
+        echo '</p>';
+        die();
+    }
+
+    // author
+    if (empty($_POST['author'])) {
+        echo '</p>';
         die();
     }
 
     $conn = mysqli_connect('localhost', 'root', 'password', 'LMS');
 
     //check for book already in database
-    $isbn = $_POST['isbn'];
+    $isbn = $_POST['ISBN'];
     $query = "select ISBN from Book where ISBN='$isbn';";
     $result = mysqli_fetch_array(mysqli_query($conn, $query));
     if ($result != null) {
-        echo 'Book already in use.</p>';
+        echo 'Book already in Library.</p>';
         mysqli_close($conn);
         die();
     }
@@ -42,7 +43,7 @@
     $author = $_POST['author'];
     $genres = $_POST['genres'];
 
-    $query = "insert into Book(ISBN, author, title, genre) values ($isbn, $author, $title, $genres);" or die("Failed to insert book.");
+    $query = "insert into Book(ISBN, author, title) values ('$isbn', '$author', '$title');" or die("Failed to insert book.");
     mysqli_query($conn, $query);
     mysqli_close($conn);
 

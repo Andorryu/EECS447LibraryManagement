@@ -98,6 +98,7 @@
             // ex: there are the following ids: 00000 00001 00002 00004
             //     -since 00003 was skipped, it will be used for a new librarian
             $new_LID = toLID($i);
+            break;
         }
         elseif ($i == $res_len - 1) {
             // if reached end, make it the next value
