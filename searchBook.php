@@ -16,6 +16,7 @@
     $table = $_POST['option'];
     $query = "select * from Book where $table = '$input'";
     $q_result = mysqli_query($conn, $query);
+    echo '<style> table, tr, th, td{ border-style: solid;}</style>'
     echo '<table>';
     echo '<tr>
     <th>Author</th>
