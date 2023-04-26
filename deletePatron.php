@@ -1,4 +1,5 @@
 <?php
+
 // Connect to the database
 $conn = mysqli_connect("localhost", "root", "password", "LMS");
 
@@ -12,4 +13,5 @@ mysqli_query($conn, "DELETE FROM Patron WHERE PID = '$id'");
 mysqli_close($conn);
 
 
+echo "Patron has been deleted from the database";
 ?>
