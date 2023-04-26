@@ -1,6 +1,6 @@
 
 let links = [];
-let currentPage = "checkOut"; // should match the src in the iframe in base.html
+let currentPage = "search"; // should match the src in the iframe in base.html
 let debug = null;
 
 function updateNavSelection() {
