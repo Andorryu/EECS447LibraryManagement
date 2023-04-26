@@ -1,6 +1,6 @@
 <?php
     $conn = mysqli_connect("localhost", "root", "password", "LMS");
-    $q_result = mysqli_query($conn, "SELECT title, author, Book.ISBN FROM Book, CheckOut WHERE Book.ISBN != Checkout.ISBN");
+    $q_result = mysqli_query($conn, "SELECT title, author, Book.ISBN FROM Book, CheckOut WHERE Book.ISBN <> Checkout.ISBN");
     echo '<style> table, tr, th, td{ border-style: solid;}</style>';
     echo '<table>';
     echo '<tr>
