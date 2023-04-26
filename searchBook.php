@@ -28,9 +28,12 @@
         '<td>' . $line['author'] . '</td>' .
         '<td>' . $line['ISBN'] . '</td>' .
         '<td>' . $line['title'] . '</td>' .
+        '<td> <a href = "deleteQuery.php">Delete</a> </td>' . 
         '</tr>';
     }
     echo '</table>';
 
+    
 
 ?>
+
