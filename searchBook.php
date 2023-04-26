@@ -28,7 +28,7 @@
         '<td>' . $line['author'] . '</td>' .
         '<td>' . $line['ISBN'] . '</td>' .
         '<td>' . $line['title'] . '</td>' .
-        '<td> <a href = "deleteQuery.php">Delete</a> </td>' . 
+        "<td><form action='deleteBook.php' method='post'><input type='hidden' name='isbn' value='"$line['ISBN']"'><button type='submit'>Delete</button></form></td>" .
         '</tr>';
     }
     echo '</table>';
