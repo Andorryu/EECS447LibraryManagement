@@ -1,6 +1,9 @@
 <?php
+    ini_set('display_errors', 1);
+    ini_set('display_startup_errors', 1);
+    error_reporting(E_ALL);
     $conn = mysqli_connect("localhost", "root", "password", "LMS");
-    $q_result = mysqli_query($conn, "SELECT title, author, Book.ISBN FROM Book, CheckOut WHERE Book.ISBN <> Checkout.ISBN");
+    $q_result = mysqli_query($conn, "SELECT title, author, Book.ISBN FROM Book, CheckOut WHERE Book.ISBN <> CheckOut.ISBN");
     echo '<style> table, tr, th, td{ border-style: solid;}</style>';
     echo '<table>';
     echo '<tr>
