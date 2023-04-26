@@ -11,5 +11,5 @@ mysqli_query($conn, "DELETE FROM Book WHERE ISBN = '$id'");
 // Close the database connection
 mysqli_close($conn);
 
-
+echo "Book has been deleted from the database";
 ?>
