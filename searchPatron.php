@@ -23,7 +23,8 @@
     $query = "select * from Patron where $option='$search'";
     $q_result = mysqli_query($conn, $query);
 
-    echo '<table style="border-style: solid;">';
+    echo '<style>table, tr, th, td{border-style: solid;}</style>';
+    echo '<table>';
     echo '<tr>
     <th>PID</th>
     <th>Last Name</th>
