@@ -9,28 +9,30 @@
     h1{
         text-align: center;
         font-size: 4em;
+        margin: 20px;
     }
 
     .container{
         text-align: center;
-        background-color: lightblue;
-    }
-
-    .patronOptions{
-        background-color: lightsalmon;
-    }
-    
-    .bookOptions{
-        background-color: lightgreen;
     }
 
     iframe{
         width: 49%;
+        height: 300px;
+    }
+    iframe.message{
+        width: 100%;
+        height: 50px;
+        border-style: none;
     }
 
-    form.search{
+    .search{
         float: left;
         width: 50%;
+    }
+    .submit{
+        text-align: center;
+        margin: 20px 0;
     }
     
 </style>
@@ -38,11 +40,10 @@
 <body>
     <h1>Search/Check Out</h1>
     <div class="container">
-        <form class="search" action="searchPatron.php" method="post" style="background-color: lightseagreen;" target="patronResults"> <!-- Patron -->
-            <br>
-            <h2>Patron</h2><br><br>
+        <form class="search" action="searchPatron.php" method="post" target="patronResults"> <!-- Patron -->
+            <h2>Patron</h2>
             <input type="text" name="search">
-            <input type="submit" value="Search"><br><br><br>
+            <input type="submit" value="Search"><br><br>
             <div class="patronOptions">
                 <input type="radio" name="option" value="firstName" checked>
                 <label for="firstName">First Name</label>
@@ -50,14 +51,13 @@
                 <label for="lastName">Last Name</label>
                 <input type="radio" name="option" value="phone">
                 <label for="phone">Phone #</label>
-            </div>
+            </div><br>
         </form>
 
-        <form class="search" action="searchBook.php" method="post" style="background-color: lightskyblue;" target="bookResults"> <!-- Book -->
-            <br>
-            <h2>Book</h2><br><br>
+        <form class="search" action="searchBook.php" method="post" target="bookResults"> <!-- Book -->
+            <h2>Book</h2>
             <input type="text" name="search">
-            <input type="submit" value="Search"><br><br><br>
+            <input type="submit" value="Search"><br><br>
             <div class="bookOptions">
                 <input type="radio" name="option" value="title" checked>
                 <label for="title">Title</label>
@@ -65,19 +65,19 @@
                 <label for="author">Author</label>
                 <input type="radio" name="option" value="ISBN">
                 <label for="ISBN">ISBN</label>
-            </div>
+            </div><br>
         </form>
         <iframe name="patronResults" src="searchPatron.php"></iframe>
         <iframe name="bookResults" src="searchBook.php"></iframe>
 
     </div>
     <div>
-        <form action="checkOut.php" target="message">
+        <form class="submit" action="checkOut.php" method="post" target="message">
             <input id="patronValue" type="hidden" name="patron">
             <input id="bookValue" type="hidden" name="book">
             <input type="submit" value="Check Out">
         </form>
-        <iframe name="message"></iframe>
+        <iframe class="message" name="message" src="checkOut.php"></iframe>
     </div>
 </body>
 </html>

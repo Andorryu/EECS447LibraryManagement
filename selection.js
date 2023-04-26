@@ -8,18 +8,14 @@ function toID(num, size) {
 }
 
 function selectPatron(PID) {
-    // add PID of selected patron to div for formatting and
-    // add PID as form value
     selection = document.querySelector('.selectedPatron');
-    selection.innerText = toID(PID, 5);
-    input = document.querySelector('#patronValue');
+    selection.innerText = 'Selected Patron ID: ' + toID(PID, 5);
+    input = window.parent.document.querySelector('#patronValue');
     input.setAttribute('value', toID(PID, 5));
 }
 function selectBook(ISBN) {
-    // add PID of selected patron to div for formatting and
-    // add PID as form value
-    selection = document.querySelector('.selectedBooks');
-    selection.innerText = toID(ISBN, 13);
-    input = document.querySelector('#bookValue');
+    selection = document.querySelector('.selectedBook');
+    selection.innerText = 'Selected Book ISBN: ' + toID(ISBN, 13);
+    input = window.parent.document.querySelector('#bookValue');
     input.setAttribute('value', toID(ISBN, 13));
 }

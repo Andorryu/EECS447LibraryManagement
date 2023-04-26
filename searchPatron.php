@@ -26,26 +26,22 @@
     echo '<script type="text/javascript" src="selection.js"></script>';
     echo '<style>
 
-    table, tr, th, td{border-style: solid;}
+    tr, th, td{border-style: solid;}
+    td{
+        padding: 0 5px;
+    }
     
     .selectedPatronSection{
-        background-color: blue;
-        padding: 20px 200px;
+        padding: 15px 200px;
     }
 
-    .selectedBooksSection{
-        background-color: cadetblue;
-        padding: 20px 100px;
-    }
-
-    .selectedBooksSection > div, .selectedPatronSection > div{
-        background-color: white;
-        padding: 20px;
+    .selectedPatron{
+        text-align: center;
     }
     </style>';
 
     echo '<div class="selectedPatronSection">
-        <div class="selectedPatron">No patron selected.</div>
+        <p class="selectedPatron">No patron selected.</p>
     </div>';
 
     echo '<table>';
@@ -54,6 +50,7 @@
     <th>Last Name</th>
     <th>First Name</th>
     <th>Phone #</th>
+    <th>Email</th>
     </tr>';
     while ($line = mysqli_fetch_array($q_result, MYSQLI_ASSOC)) {
         $PID = $line['PID'];
@@ -62,6 +59,7 @@
         '<td>' . $line['lastName'] . '</td>' .
         '<td>' . $line['firstName'] . '</td>' .
         '<td>' . $line['phone'] . '</td>' .
+        '<td>' . $line['email'] . '</td>' .
         '<td><a href="#" onclick="selectPatron(' . $PID . ')">select</a></td>' .
         "<td><form action='deletePatron.php' method='post'><input type='hidden' name='PID' value=" . $line['PID'], "><button type='submit'>Delete</button></form></td>" .
         '</tr>';
