@@ -40,7 +40,7 @@
 <body>
     <h1>Search/Check Out</h1>
     <div class="container">
-        <form class="search" action="searchPatron.php" method="post" target="patronResults"> <!-- Patron -->
+        <form class="search" action="php/searchPatron.php" method="post" target="patronResults"> <!-- Patron -->
             <h2>Patron</h2>
             <input type="text" name="search">
             <input type="submit" value="Search"><br><br>
@@ -54,7 +54,7 @@
             </div><br>
         </form>
 
-        <form class="search" action="searchBook.php" method="post" target="bookResults"> <!-- Book -->
+        <form class="search" action="php/searchBook.php" method="post" target="bookResults"> <!-- Book -->
             <h2>Book</h2>
             <input type="text" name="search">
             <input type="submit" value="Search"><br><br>
@@ -67,17 +67,17 @@
                 <label for="ISBN">ISBN</label>
             </div><br>
         </form>
-        <iframe name="patronResults" src="searchPatron.php"></iframe>
-        <iframe name="bookResults" src="searchBook.php"></iframe>
+        <iframe name="patronResults" src="php/searchPatron.php"></iframe>
+        <iframe name="bookResults" src="php/searchBook.php"></iframe>
 
     </div>
     <div>
-        <form class="submit" action="checkOut.php" method="post" target="message">
+        <form class="submit" action="php/checkOut.php" method="post" target="message">
             <input id="patronValue" type="hidden" name="patron">
             <input id="bookValue" type="hidden" name="book">
             <input type="submit" value="Check Out">
         </form>
-        <iframe class="message" name="message" src="checkOut.php"></iframe>
+        <iframe class="message" name="message" src="php/checkOut.php"></iframe>
     </div>
 </body>
 </html>

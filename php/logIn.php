@@ -13,10 +13,10 @@
 
     if ($result != NULL) {
         // login successful
-        header('Location: base.html');
+        header('Location: ../base.html');
     } else {
         // login unsuccessful
-        header('Location: logIn.html');
+        header('Location: ../logIn.html');
     }
 
 ?>
