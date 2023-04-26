@@ -37,13 +37,13 @@
 <body>
     <h1>Check Out</h1>
     <div class="container">
-        <form style="background-color: lightseagreen;" action="checkOutPatron.php" method="post" target="patronResults"> <!-- Patron -->
+        <form style="background-color: lightseagreen;" action="searchPatron.php" method="post" target="patronResults"> <!-- Patron -->
             <br>
             <h2>Patron</h2><br><br>
             <input type="text" name="search">
             <input type="submit" value="Search"><br><br><br>
             <div class="patronOptions">
-                <input type="radio" name="option" value="firstName">
+                <input type="radio" name="option" value="firstName" checked>
                 <label for="firstName">First Name</label>
                 <input type="radio" name="option" value="lastName">
                 <label for="lastName">Last Name</label>
@@ -54,13 +54,13 @@
             </div>
         </form>
 
-        <form style="background-color: lightskyblue;" action="checkOutBook.php" method="post" target="bookResults"> <!-- Book -->
+        <form style="background-color: lightskyblue;" action="searchBook.php" method="post" target="bookResults"> <!-- Book -->
             <br>
             <h2>Book</h2><br><br>
             <input type="text" name="search">
             <input type="submit" value="Search"><br><br><br>
             <div class="bookOptions">
-                <input type="radio" name="option" value="title">
+                <input type="radio" name="option" value="title" checked>
                 <label for="title">Title</label>
                 <input type="radio" name="option" value="author">
                 <label for="author">Author</label>
@@ -68,8 +68,8 @@
                 <label for="ISBN">ISBN</label>
             </div>
         </form>
-        <iframe name="patronResults" src="checkOutPatron.php"></iframe>
-        <iframe name="bookResults" src="checkOutBook.php"></iframe>
+        <iframe name="patronResults" src="searchPatron.php"></iframe>
+        <iframe name="bookResults" src="searchBook.php"></iframe>
     </div>
 </body>
 </html>
