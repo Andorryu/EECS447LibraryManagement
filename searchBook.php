@@ -9,9 +9,10 @@
         die()
     }
     $conn = mysqli_connect('mysql.eecs.ku.edu', 't365t737', 'aiPho4UN', 't365t737');
-    elseif ($_POST['Option'] == 'title'){
+    elseif (){
         $input = $_POST['search'];
-        $query = "select * from Book where title = '$input'";
+        $table = $_POST['Option'];
+        $query = "select * from Book where $table = '$input'";
         $q_result = mysqli_query($conn, $query);
         echo '<table>';
         echo '<tr>
@@ -28,4 +29,5 @@
         }
         echo '</table>';
     }
+
 ?>
