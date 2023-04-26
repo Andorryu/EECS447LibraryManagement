@@ -23,6 +23,7 @@
     $query = "select * from Patron where $option like '%$search%'";
     $q_result = mysqli_query($conn, $query);
 
+    echo '<script src="selection.js"></script>';
     echo '<style>table, tr, th, td{border-style: solid;}</style>';
     echo '<table>';
     echo '<tr>
@@ -37,6 +38,7 @@
         '<td>' . $line['lastName'] . '</td>' .
         '<td>' . $line['firstName'] . '</td>' .
         '<td>' . $line['phone'] . '</td>' .
+        '<td><a href="#" onclick="selectPatron(' . $line['PID'] . ')">select</a></td>' .
         "<td><form action='deletePatron.php' method='post'><input type='hidden' name='PID' value=" . $line['PID'], "><button type='submit'>Delete</button></form></td>" .
         '</tr>';
     }
