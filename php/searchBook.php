@@ -16,7 +16,7 @@
     $input = $_POST['search'];
     $table = $_POST['option'];
     // JOIN QUERY 1
-    $query = "select Book.ISBN, title, author, group_concat(genre separator '\n') as genre from Book, Genre where $table like '%$input%' and Book.ISBN=Genre.ISBN group by Book.ISBN;";
+    $query = "select Book.ISBN, title, author, group_concat(genre separator '\n') as genre from Book, Genre where Book.$table like '%$input%' and Book.ISBN=Genre.ISBN group by Book.ISBN;";
     $q_result = mysqli_query($conn, $query);
 
     echo '<script type="text/javascript" src="../selection.js"></script>';
