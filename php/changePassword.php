@@ -50,10 +50,12 @@
     if ($result == null) {
         echo "$result";
         echo 'Email and/or password is incorrect.</p>';
+        mysqli_close($conn);
         die();
     }
 
     $query = "update Librarian set password='$newPass' where email='$email';";
     mysqli_query($conn, $query);
     echo '</p><p style="color: green; text-align: center;">Password changed.</p>';
+    mysqli_close($conn);
 ?>
