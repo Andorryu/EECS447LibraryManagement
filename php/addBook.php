@@ -46,18 +46,12 @@
 
     $genres = str_replace(" ", "", $genres);
     $genres = str_replace(",", "", $genres);
-    $genrearray = str_split($genres);
+    $genres = str_split($genres, 9);
 
-    while (empty($genrearray) == FALSE) {
-        $genre = array($genrearry[0], $genrearry[1], $genrearry[2], $genrearry[3], $genrearry[4], $genrearry[5], 
-        $genrearry[6], $genrearry[7], $genrearry[8]);
+    for ($i = 0; $i < count($genres); $i++) {
 
-        $genre = implode($genre);
-
-        $query = "insert into Genre(ISBN, genre) values ('$isbn', '$genre');" or die("Failed to insert book.");
+        $query = "insert into Genre(ISBN, genre) values ('$isbn', '$genres[$i]');" or die("Failed to insert book.");
         mysqli_query($conn, $query);
-
-        array_splice($genrearray, 0, 9);
     };
 
     $query = "insert into Book(ISBN, author, title) values ('$isbn', '$author', '$title');" or die("Failed to insert book.");

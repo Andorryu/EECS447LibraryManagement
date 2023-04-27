@@ -49,6 +49,7 @@
     }
     elseif ($_POST['password'] != $_POST['passwordConfirmation']) {
         echo 'Passwords do not match.</p>';
+        die();
     }
 
     if (empty($_POST['firstName']) or empty($_POST['lastName'])) {

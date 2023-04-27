@@ -54,7 +54,7 @@
         '<td>' . $line['author'] . '</td>' .
         '<td>' . $line['genre'] . '</td>' .
         '<td><a href="#" onclick="selectBook(' . $line['ISBN'] . ')">select</a></td>' .
-        "<td><form action='deleteBook.php' method='post'><input type='hidden' name='isbn' value=".$line['ISBN']."><button type='submit'>Delete</button></form></td>" .
+        "<td><form action='php/deleteBook.php' method='post'><input type='hidden' name='isbn' value=".$line['ISBN']."><button type='submit'>Delete</button></form></td>" .
         '</tr>';
     }
     echo '</table>';
