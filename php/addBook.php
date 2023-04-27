@@ -44,8 +44,8 @@
     $author = $_POST['author'];
     $genres = $_POST['genres'];
 
-    $genres str_replace(" ", "", $genres);
-    $genres str_replace(",", "", $genres);
+    $genres = str_replace(" ", "", $genres);
+    $genres = str_replace(",", "", $genres);
     $genrearray = str_split($genres);
 
     while (empty($genrearray) == FALSE) {
