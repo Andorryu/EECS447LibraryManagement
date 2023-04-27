@@ -44,19 +44,20 @@
     $author = $_POST['author'];
     $genres = $_POST['genres'];
 
-    echo str_replace(" ", "", $genres);
-    echo str_replace(",", "", $genres);
+    $genres str_replace(" ", "", $genres);
+    $genres str_replace(",", "", $genres);
     $genrearray = str_split($genres);
 
-    for $genrearray != NULL {
+    while (empty($genrearray) == FALSE) {
         $genre = array($genrearry[0], $genrearry[1], $genrearry[2], $genrearry[3], $genrearry[4], $genrearry[5], 
         $genrearry[6], $genrearry[7], $genrearry[8]);
 
         $genre = implode("", $genre);
 
         $query = "insert into Genre(ISBN, genre) values ('$isbn', '$genre');" or die("Failed to insert book.");
+        mysqli_query($conn, $query);
 
-        array_splive($genrearray, 0, 9);
+        array_splice($genrearray, 0, 9);
     };
 
     $query = "insert into Book(ISBN, author, title) values ('$isbn', '$author', '$title');" or die("Failed to insert book.");
