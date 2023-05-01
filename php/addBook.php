@@ -44,18 +44,20 @@
     $author = $_POST['author'];
     $genres = $_POST['genres'];
 
+    // add book first
+    $query = "insert into Book(ISBN, author, title) values ('$isbn', '$author', '$title');" or die("Failed to insert book.");
+    mysqli_query($conn, $query);
+
+    // then add genres
     $genres = str_replace(" ", "", $genres);
     $genres = str_replace(",", "", $genres);
     $genres = str_split($genres, 9);
-
     for ($i = 0; $i < count($genres); $i++) {
 
         $query = "insert into Genre(ISBN, genre) values ('$isbn', '$genres[$i]');" or die("Failed to insert book.");
         mysqli_query($conn, $query);
     };
 
-    $query = "insert into Book(ISBN, author, title) values ('$isbn', '$author', '$title');" or die("Failed to insert book.");
-    mysqli_query($conn, $query);
     mysqli_close($conn);
 
     // message confirming insert

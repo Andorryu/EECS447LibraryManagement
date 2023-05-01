@@ -1,6 +1,6 @@
 <?php
-    $server_ = 'localhost'; // mysql.eecs.ku.edu
-    $username_ = 'root'; // user id
-    $password_ = 'password'; // mysql password
-    $database_ = 'LMS'; // user id
+    $server_ = 'mysql.eecs.ku.edu'; // mysql.eecs.ku.edu
+    $username_ = 'a815d085'; // user id
+    $password_ = 'ohni7ohJ'; // mysql password
+    $database_ = 'a815d085'; // user id
 ?>
